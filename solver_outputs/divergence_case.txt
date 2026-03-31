@@ -1,0 +1,8 @@
+SMT file: smt/divergence_case.smt2
+Solver: Z3 4.16.0
+
+sat
+qualifying_child = false
+qualifying_relative = true
+dependent = false
+can_candidate_claim_dependents = true
