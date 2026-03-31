@@ -164,7 +164,8 @@
 (define-fun can_candidate_claim_dependents () Bool
   (not dependent))
 
-; Part B divergence case: quick LLM intuition may say dependent, but the joint-return rule blocks it.
+; Part B divergence case: the current encoding blocks any joint return,
+; even when the return was filed only for a refund.
 (assert (= candidate_age 18))
 (assert (= taxpayer_age 41))
 (assert (= gross_income 0))
@@ -194,7 +195,7 @@
 (assert (not is_student))
 (assert (not is_disabled))
 (assert filed_joint_return)
-(assert (not joint_return_only_for_refund))
+(assert joint_return_only_for_refund)
 (assert is_us_citizen_or_national)
 (assert (not is_us_resident))
 (assert (not is_contiguous_country_resident))
